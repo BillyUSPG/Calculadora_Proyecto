@@ -38,9 +38,6 @@ namespace Calculadora_Proyecto
                 case "-":
                     resultado -= num;
                     break;
-                case "x":
-                    resultado *= num;
-                    break;
                 case "*":
                     resultado *= num;
                     break;
@@ -72,17 +69,21 @@ namespace Calculadora_Proyecto
                     resultado *= Math.E;
                     break;
                 case "sin":
+                    resultado = (num * Math.PI / 180.0);
                     resultado = Math.Sin(resultado);
                     break;
                 case "cos":
+                    resultado = (num * Math.PI / 180.0);
                     resultado = Math.Cos(resultado);
                     break;
                 case "tan":
+                    resultado = (num * Math.PI / 180.0);
                     resultado = Math.Tan(resultado);
                     break;
                 default:
                     resultado = num;
                     break;
+                
             }
         }
        
@@ -104,6 +105,9 @@ namespace Calculadora_Proyecto
             num = num.Replace("sin", "");
             num = num.Replace("cos", "");
             num = num.Replace("tan", "");
+            num = num.Replace("√", "");
+            num = num.Replace("xʸ", "");
+
             return num;
         }
 

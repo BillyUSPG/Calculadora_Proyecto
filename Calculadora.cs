@@ -201,23 +201,43 @@ namespace Calculadora_Proyecto
 
         private void btnSin_Click(object sender, EventArgs e)
         {
-            
-            
+            double num = double.Parse(calculadora.eliminaCaracter(txtResultado.Text));
+            txtResultado.Text += "sin";
+            string btnSin = (sender as Button).Text;
+            calculadora.operacion(num, btnSin);
+
+
         }
 
         private void btnCos_Click(object sender, EventArgs e)
         {
-            
+            double num = double.Parse(calculadora.eliminaCaracter(txtResultado.Text));
+            txtResultado.Text += "cos";
+            string btnCos = (sender as Button).Text;
+            calculadora.operacion(num, btnCos);
+
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
-            
+            double num = double.Parse(calculadora.eliminaCaracter(txtResultado.Text));
+            txtResultado.Text += "tan";
+            string btnTan = (sender as Button).Text;
+            calculadora.operacion(num, btnTan);
+
 
         }
 
         private void txtResultado_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == '.' && !txtResultado.Text.Contains("."))
+            {
+                int cursorPos = txtResultado.SelectionStart;
+                txtResultado.Text += ".";
+                
+                txtResultado.SelectionStart = cursorPos + 1;
+            }
+            // Solo permitir entrada de números, operadores y teclas especiales
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '+' && e.KeyChar != '-' && e.KeyChar != '*' && e.KeyChar != '/' && e.KeyChar != (char)Keys.Enter)
             {
                 e.Handled = true;
@@ -226,10 +246,11 @@ namespace Calculadora_Proyecto
             // Si se presiona la tecla Enter, realizar la operación actual
             if (e.KeyChar == (char)Keys.Enter)
             {
-                calculadora.igual(double.Parse(txtResultado.Text));
+                calculadora.igual(double.Parse(calculadora.eliminaCaracter(txtResultado.Text)));
                 e.Handled = true;
                 
                 txtResultado.Text = calculadora.getResultado().ToString();
+                txtResultado.SelectionStart = txtResultado.TextLength;
                 calculadora.clear();
             }
 
