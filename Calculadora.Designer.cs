@@ -327,7 +327,7 @@
             this.btnExponente.Name = "btnExponente";
             this.btnExponente.Size = new System.Drawing.Size(76, 56);
             this.btnExponente.TabIndex = 20;
-            this.btnExponente.Text = "xⁿ ";
+            this.btnExponente.Text = "xⁿ";
             this.btnExponente.UseVisualStyleBackColor = false;
             this.btnExponente.Click += new System.EventHandler(this.btnExponente_Click);
             // 

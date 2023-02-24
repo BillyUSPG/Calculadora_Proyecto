@@ -44,10 +44,11 @@ namespace Calculadora_Proyecto
                 case "/":
                     resultado /= num;
                     break;
-                case "xʸ":
+                case "xⁿ":
                     resultado = Math.Pow(resultado, num);
                     break;
                 case "√":
+                                                                            
                     resultado = Math.Pow(resultado, 1.0 / num);
                     break;
                 case "Log₁₀":
@@ -106,7 +107,7 @@ namespace Calculadora_Proyecto
             num = num.Replace("cos", "");
             num = num.Replace("tan", "");
             num = num.Replace("√", "");
-            num = num.Replace("xʸ", "");
+            num = num.Replace("xⁿ", "");
 
             return num;
         }
