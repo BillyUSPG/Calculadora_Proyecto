@@ -1,7 +1,9 @@
 # Calculadora_Proyecto
 
-#Grupo:
-# Gustavo Adolfo Moreno Camey – 2200048
-#Edson Attilio Hernández Pérez – 2200267
-#Billy Javier Ricardo Mazariegos Flores – 2200079
-#Kevin Ovando - 2200019
+# Integrantes
+- Gustavo Moreno
+- Gustavo Ortíz
+- Billy Mazariegos
+- Kevin Ovando
+- Elias de la Paz
+- Edson Hernández
